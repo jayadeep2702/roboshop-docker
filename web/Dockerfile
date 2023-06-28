@@ -5,5 +5,5 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 ADD default.conf /etc/nginx/nginx.conf
 ADD static /usr/share/nginx/html
 ENV CATALOGUE_HOST="catalogue"
-RUN sudo service nginx restart
+RUN service nginx restart
 
