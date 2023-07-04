@@ -7,3 +7,4 @@ ADD static /usr/share/nginx/html
 ENV CATALOGUE_HOST="catalogue"
 
 
+
