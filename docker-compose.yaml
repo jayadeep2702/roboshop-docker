@@ -14,6 +14,9 @@ services:
     - cart
     - mysql
     - shipping
+    - rabbitmq
+    - payment
+    - ratings
   mongodb:
    image: mongodb:v1
    container_name: mongodb
@@ -44,4 +47,15 @@ services:
     container_name: shipping
     depends_on:
       - mysql
-
+  rabbitmq:
+    image: rabbitmq
+    container_name: rabbitmq
+  payment:
+    image: payment:v1
+    container_name: payment
+      - rabbitmq
+  ratings:
+    image: ratings:v1
+    container_name: ratings
+    depends_on:
+      - mysql
